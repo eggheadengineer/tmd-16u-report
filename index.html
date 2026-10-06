@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Team Maryland 16U Scouting Report</title>
+<meta name="description" content="Early 2026/27 Tier 1 Hockey Federation numbers for Team Maryland 16U: where the team is losing games and what it needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one 760px reading column, like a coach's scouting sheet; verdict first, evidence below. */
+:root {
+  --bg: #f3f6f9;        /* rink-board white, slightly icy */
+  --surface: #ffffff;
+  --ink: #14202e;       /* navy ink */
+  --muted: #5a6878;
+  --rule: #d5dde6;
+  --accent: #b3261e;    /* goal-light red */
+  --accent-soft: #f6dedb;
+  --good: #1f6f43;
+  --bar: #2c4a6b;       /* actual-result bars */
+  --mark: #b3261e;      /* expected marker */
+  --f-display: "Saira Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1620; --surface: #172230; --ink: #e6edf4; --muted: #9aa8b8; --rule: #2a3a4c;
+    --accent: #ff6b5e; --accent-soft: #3a1f1f; --good: #5cc98b; --bar: #7fa6d1; --mark: #ff6b5e;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1620; --surface: #172230; --ink: #e6edf4; --muted: #9aa8b8; --rule: #2a3a4c;
+  --accent: #ff6b5e; --accent-soft: #3a1f1f; --good: #5cc98b; --bar: #7fa6d1; --mark: #ff6b5e;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 400 16px/1.6 var(--f-body);
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+}
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 64px; display: grid; gap: 44px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 800; line-height: 1.05; text-wrap: balance; margin: 0; letter-spacing: .01em; }
+h1 { font-size: clamp(2.3rem, 7vw, 3.4rem); text-transform: uppercase; }
+h2 { font-size: 1.75rem; text-transform: uppercase; }
+h3 { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+p { margin: 0; max-width: 65ch; }
+.eyebrow { font: 500 .78rem/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 16px; }
+.num { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header { display: grid; gap: 14px; }
+.record { display: flex; flex-wrap: wrap; gap: 8px 22px; font: 500 .95rem var(--f-mono); color: var(--muted); }
+.record b { color: var(--ink); font-weight: 500; }
+
+.verdict { background: var(--surface); border: 1px solid var(--rule); border-left: 6px solid var(--accent); padding: 22px 22px 22px 20px; display: grid; gap: 10px; }
+.verdict .big { font: 800 2rem/1 var(--f-display); text-transform: uppercase; }
+.verdict .big span { color: var(--accent); }
+
+.scorecard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.card { background: var(--surface); border: 1px solid var(--rule); padding: 16px; display: grid; gap: 6px; align-content: start; min-width: 0; }
+.card .label { font: 600 1.05rem var(--f-display); text-transform: uppercase; letter-spacing: .04em; }
+.pill { justify-self: start; font: 500 .72rem/1 var(--f-mono); text-transform: uppercase; letter-spacing: .08em; padding: 5px 8px; border-radius: 3px; }
+.pill.bad { background: var(--accent-soft); color: var(--accent); }
+.pill.ok { background: color-mix(in srgb, var(--good) 16%, transparent); color: var(--good); }
+.card p { font-size: .92rem; color: var(--muted); }
+@media (max-width: 620px) { .scorecard { grid-template-columns: 1fr; } }
+
+/* Charts */
+.chart { background: var(--surface); border: 1px solid var(--rule); padding: 18px 18px 14px; display: grid; gap: 12px; min-width: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--muted); }
+.legend i { display: inline-block; vertical-align: middle; margin-right: 6px; }
+.legend .sw-bar { width: 18px; height: 8px; background: var(--bar); border-radius: 0 3px 3px 0; }
+.legend .sw-mark { width: 3px; height: 14px; background: var(--mark); }
+.rows { display: grid; gap: 10px; }
+.row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) 4.6rem; gap: 10px; align-items: center; position: relative; }
+.row .opp { font-size: .9rem; line-height: 1.25; }
+.row .opp small { display: block; color: var(--muted); font-size: .75rem; }
+.track { position: relative; height: 22px; border-left: 1px solid var(--rule); }
+.track .grid { position: absolute; inset: 0; background-image: linear-gradient(to right, var(--rule) 1px, transparent 1px); background-size: calc(100% / 9) 100%; opacity: .55; }
+.track .b { position: absolute; left: 0; top: 7px; height: 8px; background: var(--bar); border-radius: 0 4px 4px 0; }
+.track .m { position: absolute; top: 1px; width: 3px; height: 20px; background: var(--mark); margin-left: -1.5px; box-shadow: 0 0 0 2px var(--surface); }
+.row .val { font: 400 .85rem var(--f-mono); font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+.row .val b { color: var(--ink); font-weight: 500; }
+.axis { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr) 4.6rem; gap: 10px; }
+.axis .ticks { position: relative; height: 16px; font: .72rem var(--f-mono); color: var(--muted); }
+.axis .ticks span { position: absolute; transform: translateX(-50%); }
+.axis .ticks span:first-child { transform: none; }
+.row:hover .opp, .row:focus-within .opp { font-weight: 600; }
+.tip { position: absolute; z-index: 2; left: 9rem; top: -38px; background: var(--ink); color: var(--bg); font: .78rem/1.35 var(--f-mono); padding: 6px 9px; border-radius: 3px; white-space: nowrap; pointer-events: none; opacity: 0; transition: opacity .12s; }
+.row:hover .tip, .row:focus .tip { opacity: 1; }
+.row:focus { outline: none; }
+.row:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.chart .total { font: 500 .9rem var(--f-mono); border-top: 1px solid var(--rule); padding-top: 10px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+@media (max-width: 520px) {
+  .row, .axis { grid-template-columns: 6.4rem minmax(0, 1fr) 4.2rem; gap: 8px; }
+  .tip { left: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .tip { transition: none; } }
+
+/* Tables */
+.tbl { overflow-x: auto; border: 1px solid var(--rule); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+th { font: 500 .72rem var(--f-mono); text-transform: uppercase; letter-spacing: .07em; color: var(--muted); }
+td.n, th.n { text-align: right; font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+tr:last-child td { border-bottom: 0; }
+td .w { color: var(--good); font-weight: 600; } td .l { color: var(--accent); font-weight: 600; }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.stat { border-top: 3px solid var(--ink); padding-top: 8px; display: grid; gap: 2px; }
+.stat.hot { border-top-color: var(--accent); }
+.stat .v { font: 800 2.2rem/1 var(--f-display); font-variant-numeric: tabular-nums; }
+.stat.hot .v { color: var(--accent); }
+.stat .k { font-size: .85rem; color: var(--muted); line-height: 1.35; }
+
+ol.needs { margin: 0; padding: 0; list-style: none; counter-reset: n; display: grid; gap: 14px; }
+ol.needs li { counter-increment: n; display: grid; grid-template-columns: 2.4rem minmax(0,1fr); gap: 4px 12px; }
+ol.needs li::before { content: counter(n); grid-row: span 2; font: 800 2rem/1 var(--f-display); color: var(--accent); }
+ol.needs b { font-weight: 600; }
+ol.needs span { color: var(--muted); font-size: .95rem; }
+
+ul.plain { margin: 0; padding-left: 1.1rem; display: grid; gap: 6px; max-width: 65ch; }
+footer { font-size: .85rem; color: var(--muted); display: grid; gap: 8px; border-top: 1px solid var(--rule); padding-top: 18px; }
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<header>
+  <div class="eyebrow">Tier 1 Hockey Federation · 16U Atlantic · 2026/27 · through Oct 4</div>
+  <h1>Team Maryland 16U Scouting Report</h1>
+  <div class="record">
+    <span>Record <b class="num">3‑4‑1</b></span>
+    <span>Place <b class="num">8th of 42</b></span>
+    <span>Goals <b class="num">19 for, 19 against</b></span>
+    <span>Home <b class="num">3‑0</b> · Road <b class="num">0‑4‑1</b></span>
+  </div>
+</header>
+
+<section class="verdict" aria-label="Verdict">
+  <div class="big">The need is <span>offense</span></div>
+  <p>Defense and goaltending are keeping games close. The team is losing because it can't score, and the power play hasn't scored at all. Four straight losses, all by one to three goals.</p>
+</section>
+
+<section aria-label="Offense, defense, goalies">
+  <div class="scorecard">
+    <div class="card"><span class="label">Offense</span><span class="pill bad">Main weakness</span><p>Scores about 65% of what other teams score against the same opponents. Power play 0 for 16.</p></div>
+    <div class="card"><span class="label">Defense</span><span class="pill ok">Holding up</span><p>Allows about half of what opponents usually score. Gets outshot by top teams and takes too many penalties.</p></div>
+    <div class="card"><span class="label">Goalies</span><span class="pill ok">Solid starter</span><p>DiVecchio .893 save %. Backup Vandercolff .851 is a step behind.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Scoring compared with each opponent's usual</h2>
+  <p>"Usual" is what that opponent averages in its other games, with the Team Maryland games taken out. For Pittsburgh and South Kent, two games each, the numbers are per‑game averages.</p>
+
+  <div class="chart" role="group" aria-label="Goals scored compared with what each opponent usually allows">
+    <h3>Goals scored</h3>
+    <div class="legend"><span><i class="sw-bar"></i>Team Maryland scored</span><span><i class="sw-mark"></i>What this opponent usually allows</span></div>
+    <div class="rows" id="gf"></div>
+    <div class="axis"><span></span><div class="ticks" id="gf-ticks"></div><span></span></div>
+    <div class="total"><span>Expected ≈ 29 goals</span><span>Actual 19 goals</span></div>
+  </div>
+
+  <div class="chart" role="group" aria-label="Goals allowed compared with what each opponent usually scores">
+    <h3>Goals allowed</h3>
+    <div class="legend"><span><i class="sw-bar"></i>Team Maryland allowed</span><span><i class="sw-mark"></i>What this opponent usually scores</span></div>
+    <div class="rows" id="ga"></div>
+    <div class="axis"><span></span><div class="ticks" id="ga-ticks"></div><span></span></div>
+    <div class="total"><span>Expected ≈ 38 goals</span><span>Actual 19 goals</span></div>
+  </div>
+  <p>Bars short of the red line in the top chart mean they scored less than usual. In the bottom chart that is good: they allowed less. Pittsburgh is 6‑0 and averages 8.5 goals in its other games, but Team Maryland held them to 2 and 3.</p>
+</section>
+
+<section>
+  <h2>Special teams</h2>
+  <p>At even strength Team Maryland is ahead 19–14. Special teams cost them 5 goals, which accounts for their whole even record.</p>
+  <div class="stats">
+    <div class="stat hot"><span class="v num">0/16</span><span class="k">Power play goals in 16 chances</span></div>
+    <div class="stat hot"><span class="v num">2</span><span class="k">Shorthanded goals allowed on their own power play</span></div>
+    <div class="stat"><span class="v num">87%</span><span class="k">Penalty kill (20 of 23)</span></div>
+    <div class="stat hot"><span class="v num">99</span><span class="k">Penalty minutes in 8 games; shorthanded 23 times vs 16 power plays</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Shots</h2>
+  <p>Official scoresheets have shot counts for 5 games. The other 3 showcase games recorded none.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Date</th><th>Opponent</th><th class="n">Score</th><th class="n">Shots for</th><th class="n">Shots against</th></tr></thead>
+      <tbody>
+        <tr><td class="num">Sep 5</td><td>Elmira Jr Aviators</td><td class="n"><span class="w">W</span> 5–3</td><td class="n">52</td><td class="n">20</td></tr>
+        <tr><td class="num">Sep 12</td><td>Pittsburgh Stars</td><td class="n"><span class="l">L</span> 1–2</td><td class="n">18</td><td class="n">33</td></tr>
+        <tr><td class="num">Sep 13</td><td>Pittsburgh Stars</td><td class="n"><span class="l">L</span> 2–3</td><td class="n">20</td><td class="n">33</td></tr>
+        <tr><td class="num">Oct 3</td><td>South Kent School</td><td class="n"><span class="l">OTL</span> 1–2</td><td class="n">23</td><td class="n">38</td></tr>
+        <tr><td class="num">Oct 4</td><td>South Kent School</td><td class="n"><span class="l">L</span> 2–5</td><td class="n">27</td><td class="n">20</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="plain">
+    <li>They scored on about 8% of their shots (11 of 140). Against Pittsburgh and South Kent it was about 7% (6 of 88).</li>
+    <li>Opposing goalies stopped about 92% of their shots. Most of their chances are from the outside and easy for goalies to stop.</li>
+    <li>In 4 regular‑season games they scored 0 goals in the 3rd period.</li>
+    <li>In three of the four games against Pittsburgh and South Kent they were outshot, 104–61 combined. The goalies covered for it.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Scoring depth</h2>
+  <p>No player has more than 2 goals, and 12 different skaters have scored. Plenty of players chip in, but no one is a proven finisher. Three skaters who played all 7 tracked games have no points; they are probably defensemen, but the league site doesn't list positions.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Player</th><th class="n">GP</th><th class="n">G</th><th class="n">A</th><th class="n">PTS</th><th class="n">PIM</th></tr></thead>
+      <tbody>
+        <tr><td>Atticus Hale</td><td class="n">7</td><td class="n">2</td><td class="n">5</td><td class="n">7</td><td class="n">8</td></tr>
+        <tr><td>Kyle Hong</td><td class="n">7</td><td class="n">1</td><td class="n">3</td><td class="n">4</td><td class="n">2</td></tr>
+        <tr><td>Tristan Xu</td><td class="n">7</td><td class="n">2</td><td class="n">1</td><td class="n">3</td><td class="n">0</td></tr>
+        <tr><td>Zack Kuntz</td><td class="n">7</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">8</td></tr>
+        <tr><td>Cole Orloff</td><td class="n">7</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">2</td></tr>
+        <tr><td>Finn Leis</td><td class="n">7</td><td class="n">2</td><td class="n">0</td><td class="n">2</td><td class="n">20</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Goalie</th><th class="n">GP</th><th class="n">Shots</th><th class="n">GA</th><th class="n">Save %</th></tr></thead>
+      <tbody>
+        <tr><td>Luc DiVecchio</td><td class="n">4</td><td class="n">84</td><td class="n">9</td><td class="n">.893</td></tr>
+        <tr><td>Preston Vandercolff</td><td class="n">3</td><td class="n">67</td><td class="n">10</td><td class="n">.851</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <h2>What they need</h2>
+  <ol class="needs">
+    <li><b>A top‑6 forward who scores goals.</b><span>A shooter who gets to the net. The team has playmakers; it lacks someone who finishes.</span></li>
+    <li><b>A defenseman who can run the power play.</b><span>Moving the puck and shooting from the point would help the 0‑for‑16 power play and the defensemen's missing points.</span></li>
+    <li><b>Better discipline.</b><span>A coaching fix, not a new player. Fewer penalties means less time killing them and more time with the puck.</span></li>
+    <li><b>A stronger backup goalie.</b><span>Lower priority. DiVecchio can carry the job.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Up next</h2>
+  <p>Two home games against Pittsburgh on Oct 10–11. Pittsburgh is the best team in the league, so these are a good test of whether the offense can produce.</p>
+</section>
+
+<footer>
+  <p><b>Caveats.</b> This is 8 games, early in the season. Shot counts are missing for 3 showcase games, positions aren't listed, and plus/minus isn't tracked. The pattern is consistent across opponents.</p>
+  <p>Source: <a href="https://www.tier1hockeyfederation.com/team-pages/?team=3112&amp;league=5&amp;season=190&amp;stat_class=1&amp;tab=schedule">Tier 1 Hockey Federation team page</a> and official game scoresheets, pulled Oct 6, 2026. Not affiliated with the team or league.</p>
+</footer>
+
+</main>
+<script>
+(function () {
+  var MAX = 9;
+  var rows = [
+    { opp: "Top Gun", note: "1 game", gf: 4, xgf: 8.3, ga: 0, xga: 2.7 },
+    { opp: "Elmira Jr Aviators", note: "1 game", gf: 5, xgf: 7.4, ga: 3, xga: 3.2 },
+    { opp: "Seacoast Academy", note: "1 game", gf: 1, xgf: 3.0, ga: 3, xga: 4.2 },
+    { opp: "American Hockey Acad.", note: "1 game", gf: 3, xgf: 2.0, ga: 1, xga: 3.7 },
+    { opp: "Pittsburgh Stars", note: "avg of 2", gf: 1.5, xgf: 1.75, ga: 2.5, xga: 8.5 },
+    { opp: "South Kent School", note: "avg of 2", gf: 1.5, xgf: 2.5, ga: 3.5, xga: 3.5 }
+  ];
+  function pct(v) { return (v / MAX * 100) + "%"; }
+  function fmt(v) { return (Math.round(v * 100) / 100).toString(); }
+  function build(id, key, xkey, verb, xverb) {
+    var host = document.getElementById(id);
+    rows.forEach(function (r) {
+      var el = document.createElement("div");
+      el.className = "row"; el.tabIndex = 0;
+      var tipText = verb + " " + fmt(r[key]) + " · " + xverb + " " + fmt(r[xkey]);
+      el.setAttribute("aria-label", r.opp + ": " + tipText);
+      el.innerHTML =
+        '<div class="opp">' + r.opp + '<small>' + r.note + '</small></div>' +
+        '<div class="track"><div class="grid"></div>' +
+          '<div class="b" style="width:' + pct(r[key]) + '"></div>' +
+          '<div class="m" style="left:' + pct(r[xkey]) + '"></div></div>' +
+        '<div class="val"><b>' + fmt(r[key]) + '</b> / ' + fmt(r[xkey]) + '</div>' +
+        '<div class="tip">' + tipText + '</div>';
+      host.appendChild(el);
+    });
+    var t = document.getElementById(id + "-ticks");
+    [0, 3, 6, 9].forEach(function (v) {
+      var s = document.createElement("span"); s.textContent = v; s.style.left = pct(v);
+      if (v === 9) s.style.transform = "translateX(-100%)";
+      t.appendChild(s);
+    });
+  }
+  build("gf", "gf", "xgf", "Scored", "usually allows");
+  build("ga", "ga", "xga", "Allowed", "usually scores");
+})();
+</script>
+</body>
+</html>
