@@ -136,39 +136,54 @@ footer { font-size: .85rem; color: var(--muted); display: grid; gap: 8px; border
 <main class="wrap">
 
 <header>
-  <div class="eyebrow">Tier 1 Hockey Federation · 16U Atlantic · 2026/27 · through Oct 4</div>
+  <div class="eyebrow">Tier 1 Hockey Federation · 16U Atlantic · 2026/27 · through Oct 11</div>
   <h1>Team Maryland 16U Early Season Report</h1>
   <div class="record">
-    <span>Record <b class="num">3‑4‑1</b></span>
+    <span>Record <b class="num">3‑5‑1</b></span>
     <span>Place <b class="num">8th of 42</b></span>
-    <span>Goals <b class="num">19 for, 19 against</b></span>
-    <span>Home <b class="num">3‑0</b> · Road <b class="num">0‑4‑1</b></span>
+    <span>Goals <b class="num">21 for, 23 against</b></span>
+    <span>Home <b class="num">3‑1</b> · Road <b class="num">0‑4‑1</b></span>
   </div>
 </header>
 
 <section class="verdict" aria-label="Verdict">
-  <div class="big">The need is <span>offense</span></div>
-  <p>Defense and goaltending are keeping games close. The team is losing because it can't score, and the power play hasn't scored at all. Four straight losses, all by one to three goals.</p>
+  <div class="big">The need is <span>special teams</span></div>
+  <p>At even strength Team Maryland is ahead 21–15. Special teams have cost them 8 goals: the power play is 0 for 21, and opponents have scored 6 times on their power plays. The penalties are piling up too, 171 minutes in 9 games. Six straight losses, all to Pittsburgh and South Kent, the teams ranked 1st and 14th.</p>
 </section>
 
 <section aria-label="Offense, defense, goalies">
   <div class="scorecard">
-    <div class="card"><span class="label">Offense</span><span class="pill bad">Main weakness</span><p>Scores about 65% of what other teams score against the same opponents. Power play 0 for 16.</p></div>
-    <div class="card"><span class="label">Defense</span><span class="pill ok">Holding up</span><p>Allows about half of what opponents usually score. Gets outshot by top teams and takes too many penalties.</p></div>
-    <div class="card"><span class="label">Goalies</span><span class="pill ok">Solid starter</span><p>DiVecchio .893 save %. Backup Vandercolff .851 is a step behind.</p></div>
+    <div class="card"><span class="label">Offense</span><span class="pill bad">Power play 0/21</span><p>Fine at even strength. Scores about 70% of what other teams score against the same opponents, and the power play is the gap.</p></div>
+    <div class="card"><span class="label">Defense</span><span class="pill bad">Too many penalties</span><p>Allows about half of what opponents usually score at even strength. Shorthanded 30 times; 6 power‑play goals against.</p></div>
+    <div class="card"><span class="label">Goalies</span><span class="pill ok">Solid starter</span><p>DiVecchio .893 save % in games with shot counts. Backup Vandercolff .851 is a step behind.</p></div>
   </div>
 </section>
 
 <section>
+  <h2>This past weekend</h2>
+  <p>Two home games against Pittsburgh, now 7‑0 and the best team in the league.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Date</th><th>Result</th><th>What happened</th></tr></thead>
+      <tbody>
+        <tr><td class="num">Oct 10</td><td class="num"><span class="l">L</span> 2–6</td><td>Scoresheet posted, but not yet official in the standings. Pittsburgh scored once shorthanded.</td></tr>
+        <tr><td class="num">Oct 11</td><td class="num"><span class="l">L</span> 2–4</td><td>Three of Pittsburgh's four goals came on the power play. Finn Leis and Brody Kilkeary were ejected for fighting, and both benches were penalized for excessive penalties. Goals by Ivan Harny and Noah Lozano.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Neither game recorded shot counts.</p>
+</section>
+
+<section>
   <h2>Scoring compared with each opponent's usual</h2>
-  <p>"Usual" is what that opponent averages in its other games, with the Team Maryland games taken out. For Pittsburgh and South Kent, two games each, the numbers are per‑game averages.</p>
+  <p>"Usual" is what that opponent averages in its other games, with the Team Maryland games taken out. For Pittsburgh (3 official games) and South Kent (2) the numbers are per‑game averages. The Oct 10 game isn't official yet and is left out.</p>
 
   <div class="chart" role="group" aria-label="Goals scored compared with what each opponent usually allows">
     <h3>Goals scored</h3>
     <div class="legend"><span><i class="sw-bar"></i>Team Maryland scored</span><span><i class="sw-mark"></i>What this opponent usually allows</span></div>
     <div class="rows" id="gf"></div>
     <div class="axis"><span></span><div class="ticks" id="gf-ticks"></div><span></span></div>
-    <div class="total"><span>Expected ≈ 29 goals</span><span>Actual 19 goals</span></div>
+    <div class="total"><span>Expected ≈ 30 goals</span><span>Actual 21 goals</span></div>
   </div>
 
   <div class="chart" role="group" aria-label="Goals allowed compared with what each opponent usually scores">
@@ -176,25 +191,25 @@ footer { font-size: .85rem; color: var(--muted); display: grid; gap: 8px; border
     <div class="legend"><span><i class="sw-bar"></i>Team Maryland allowed</span><span><i class="sw-mark"></i>What this opponent usually scores</span></div>
     <div class="rows" id="ga"></div>
     <div class="axis"><span></span><div class="ticks" id="ga-ticks"></div><span></span></div>
-    <div class="total"><span>Expected ≈ 38 goals</span><span>Actual 19 goals</span></div>
+    <div class="total"><span>Expected ≈ 46 goals</span><span>Actual 23 goals</span></div>
   </div>
-  <p>Bars short of the red line in the top chart mean they scored less than usual. In the bottom chart that is good: they allowed less. Pittsburgh is 6‑0 and averages 8.5 goals in its other games, but Team Maryland held them to 2 and 3.</p>
+  <p>Bars short of the red line in the top chart mean they scored less than usual. In the bottom chart that is good: they allowed less. Pittsburgh averages 8.5 goals in its other games; Team Maryland has held them to 3 a game in the official results.</p>
 </section>
 
 <section>
-  <h2>Special teams</h2>
-  <p>At even strength Team Maryland is ahead 19–14. Special teams cost them 5 goals, which accounts for their whole even record.</p>
+  <h2>Special teams and discipline</h2>
+  <p>Even strength: 21 goals for, 15 against. Special teams: 0 for, 8 against. That difference is the whole season.</p>
   <div class="stats">
-    <div class="stat hot"><span class="v num">0/16</span><span class="k">Power play goals in 16 chances</span></div>
+    <div class="stat hot"><span class="v num">0/21</span><span class="k">Power‑play goals in 21 chances</span></div>
     <div class="stat hot"><span class="v num">2</span><span class="k">Shorthanded goals allowed on their own power play</span></div>
-    <div class="stat"><span class="v num">87%</span><span class="k">Penalty kill (20 of 23)</span></div>
-    <div class="stat hot"><span class="v num">99</span><span class="k">Penalty minutes in 8 games; shorthanded 23 times vs 16 power plays</span></div>
+    <div class="stat hot"><span class="v num">80%</span><span class="k">Penalty kill (24 of 30); 3 power‑play goals against on Oct 11 alone</span></div>
+    <div class="stat hot"><span class="v num">171</span><span class="k">Penalty minutes in 9 games, about 19 a game; shorthanded 30 times vs 21 power plays</span></div>
   </div>
 </section>
 
 <section>
   <h2>Shots</h2>
-  <p>Official scoresheets have shot counts for 5 games. The other 3 showcase games recorded none.</p>
+  <p>Official scoresheets have shot counts for 5 games. The showcase games and both games this past weekend recorded none.</p>
   <div class="tbl">
     <table>
       <thead><tr><th>Date</th><th>Opponent</th><th class="n">Score</th><th class="n">Shots for</th><th class="n">Shots against</th></tr></thead>
@@ -209,57 +224,58 @@ footer { font-size: .85rem; color: var(--muted); display: grid; gap: 8px; border
   </div>
   <ul class="plain">
     <li>They scored on about 8% of their shots (11 of 140). Against Pittsburgh and South Kent it was about 7% (6 of 88).</li>
-    <li>Opposing goalies stopped about 92% of their shots. Most of their chances are from the outside and easy for goalies to stop.</li>
-    <li>In 4 regular‑season games they scored 0 goals in the 3rd period.</li>
-    <li>In three of the four games against Pittsburgh and South Kent they were outshot, 104–61 combined. The goalies covered for it.</li>
+    <li>In three of the four games against Pittsburgh and South Kent with shot counts they were outshot, 104–61 combined. The goalies covered for it.</li>
   </ul>
 </section>
 
 <section>
   <h2>Scoring depth</h2>
-  <p>No player has more than 2 goals, and 12 different skaters have scored. Plenty of players chip in, but no one is a proven finisher. Three skaters who played all 7 tracked games have no points; they are probably defensemen, but the league site doesn't list positions.</p>
+  <p>No player has more than 2 goals, and 13 different skaters have scored. Plenty of players chip in, but no one is a proven finisher. Three skaters who have played 8 or 9 games have no points; they are probably defensemen, but the league site doesn't list positions.</p>
   <div class="tbl">
     <table>
       <thead><tr><th>Player</th><th class="n">GP</th><th class="n">G</th><th class="n">A</th><th class="n">PTS</th><th class="n">PIM</th></tr></thead>
       <tbody>
-        <tr><td>Atticus Hale</td><td class="n">7</td><td class="n">2</td><td class="n">5</td><td class="n">7</td><td class="n">8</td></tr>
-        <tr><td>Kyle Hong</td><td class="n">7</td><td class="n">1</td><td class="n">3</td><td class="n">4</td><td class="n">2</td></tr>
-        <tr><td>Tristan Xu</td><td class="n">7</td><td class="n">2</td><td class="n">1</td><td class="n">3</td><td class="n">0</td></tr>
+        <tr><td>Atticus Hale</td><td class="n">9</td><td class="n">2</td><td class="n">5</td><td class="n">7</td><td class="n">10</td></tr>
+        <tr><td>Kyle Hong</td><td class="n">9</td><td class="n">1</td><td class="n">3</td><td class="n">4</td><td class="n">2</td></tr>
+        <tr><td>Ivan Harny</td><td class="n">9</td><td class="n">2</td><td class="n">1</td><td class="n">3</td><td class="n">4</td></tr>
+        <tr><td>Brody Kilkeary</td><td class="n">9</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">25</td></tr>
+        <tr><td>Tristan Xu</td><td class="n">9</td><td class="n">2</td><td class="n">1</td><td class="n">3</td><td class="n">0</td></tr>
         <tr><td>Zack Kuntz</td><td class="n">7</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">8</td></tr>
-        <tr><td>Cole Orloff</td><td class="n">7</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">2</td></tr>
-        <tr><td>Finn Leis</td><td class="n">7</td><td class="n">2</td><td class="n">0</td><td class="n">2</td><td class="n">20</td></tr>
+        <tr><td>Cole Orloff</td><td class="n">9</td><td class="n">1</td><td class="n">2</td><td class="n">3</td><td class="n">2</td></tr>
+        <tr><td>Finn Leis</td><td class="n">9</td><td class="n">2</td><td class="n">0</td><td class="n">2</td><td class="n">37</td></tr>
       </tbody>
     </table>
   </div>
   <div class="tbl">
     <table>
-      <thead><tr><th>Goalie</th><th class="n">GP</th><th class="n">Shots</th><th class="n">GA</th><th class="n">Save %</th></tr></thead>
+      <thead><tr><th>Goalie</th><th class="n">GP with shots</th><th class="n">Shots</th><th class="n">GA</th><th class="n">Save %</th></tr></thead>
       <tbody>
         <tr><td>Luc DiVecchio</td><td class="n">4</td><td class="n">84</td><td class="n">9</td><td class="n">.893</td></tr>
         <tr><td>Preston Vandercolff</td><td class="n">3</td><td class="n">67</td><td class="n">10</td><td class="n">.851</td></tr>
       </tbody>
     </table>
   </div>
+  <p>DiVecchio started both Pittsburgh games this weekend. Those games had no shot counts, so they aren't in his save percentage.</p>
 </section>
 
 <section>
   <h2>What they need</h2>
   <ol class="needs">
-    <li><b>A top‑6 forward who scores goals.</b><span>A shooter who gets to the net. The team has playmakers; it lacks someone who finishes.</span></li>
-    <li><b>A defenseman who can run the power play.</b><span>Moving the puck and shooting from the point would help the 0‑for‑16 power play and the defensemen's missing points.</span></li>
-    <li><b>Better discipline.</b><span>A coaching fix, not a new player. Fewer penalties means less time killing them and more time with the puck.</span></li>
+    <li><b>A defenseman who can run the power play.</b><span>Moving the puck and shooting from the point. 0 for 21 is the biggest single gap on the team.</span></li>
+    <li><b>Better discipline.</b><span>A coaching fix, not a new player. About 19 penalty minutes a game, two fighting ejections on Oct 11, and 6 power‑play goals against.</span></li>
+    <li><b>A top‑6 forward who scores goals.</b><span>A shooter who gets to the net and can finish on the power play.</span></li>
     <li><b>A stronger backup goalie.</b><span>Lower priority. DiVecchio can carry the job.</span></li>
   </ol>
 </section>
 
 <section>
   <h2>Up next</h2>
-  <p>Two home games against Pittsburgh on Oct 10–11. Pittsburgh is the best team in the league, so these are a good test of whether the offense can produce.</p>
+  <p>Almost four weeks off, then three games at Seacoast Academy (Nov 6–8) and home against Mercer Chiefs (6‑3), the Atlantic conference leader, on Nov 14.</p>
 </section>
 
 <footer>
-  <p><b>Caveats.</b> This is 8 games, early in the season. Shot counts are missing for 3 showcase games, positions aren't listed, and plus/minus isn't tracked. The pattern is consistent across opponents.</p>
-  <p>Source: <a href="https://www.tier1hockeyfederation.com/team-pages/?team=3112&amp;league=5&amp;season=190&amp;stat_class=1&amp;tab=schedule">Tier 1 Hockey Federation team page</a> and official game scoresheets, pulled Oct 6, 2026. Not affiliated with the team or league.</p>
+  <p><b>Caveats.</b> Nine official games plus one pending, early in the season. Shot counts exist for only 5 games, positions aren't listed, and plus/minus isn't tracked. The Oct 10 game's numbers are from the posted scoresheet and will be added to the totals once it's official.</p>
+  <p>Source: <a href="https://www.tier1hockeyfederation.com/team-pages/?team=3112&amp;league=5&amp;season=190&amp;stat_class=1&amp;tab=schedule">Tier 1 Hockey Federation team page</a> and official game scoresheets, pulled Oct 13, 2026. Not affiliated with the team or league.</p>
 </footer>
 
 </main>
@@ -268,10 +284,10 @@ footer { font-size: .85rem; color: var(--muted); display: grid; gap: 8px; border
   var MAX = 9;
   var rows = [
     { opp: "Top Gun", note: "1 game", gf: 4, xgf: 8.3, ga: 0, xga: 2.7 },
-    { opp: "Elmira Jr Aviators", note: "1 game", gf: 5, xgf: 7.4, ga: 3, xga: 3.2 },
+    { opp: "Elmira Jr Aviators", note: "1 game", gf: 5, xgf: 6.3, ga: 3, xga: 3.0 },
     { opp: "Seacoast Academy", note: "1 game", gf: 1, xgf: 3.0, ga: 3, xga: 4.2 },
     { opp: "American Hockey Acad.", note: "1 game", gf: 3, xgf: 2.0, ga: 1, xga: 3.7 },
-    { opp: "Pittsburgh Stars", note: "avg of 2", gf: 1.5, xgf: 1.75, ga: 2.5, xga: 8.5 },
+    { opp: "Pittsburgh Stars", note: "avg of 3", gf: 1.67, xgf: 1.75, ga: 3, xga: 8.5 },
     { opp: "South Kent School", note: "avg of 2", gf: 1.5, xgf: 2.5, ga: 3.5, xga: 3.5 }
   ];
   function pct(v) { return (v / MAX * 100) + "%"; }
